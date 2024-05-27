@@ -7,4 +7,8 @@ export const LOGO_URL =
 export const SWIGGY_API_URL =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.7348650808515&lng=83.31020995974542&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
-  
+    // shimmer card unit
+export const shimmer_card_unit = 20;
+
+// shimmer Menu card unit
+export const shimmer_menu_card_unit = 4;
