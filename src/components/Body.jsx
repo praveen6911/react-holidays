@@ -4,6 +4,7 @@ import { useState } from "react";
 import { SWIGGY_API_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 
+
 const Body = () => {
   const [originalList, setOriginalList] = useState([]); 
   const [filteredList, setFilteredList] = useState([]);

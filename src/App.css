@@ -53,21 +53,63 @@
   margin-bottom: 10px;
 }
 
+.body {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
 
 .filter {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin: 10px;
-      
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.search button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: #555;
 }
 
 .filter-btn {
-  padding: 5px;
-  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
   cursor: pointer;
-  color: #244855;
-  background-color: #7091E6;
 }
 
+.filter-btn:hover {
+  background-color: #555;
+}
 
-
+.restaurant-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

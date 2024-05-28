@@ -25,13 +25,14 @@ import { createBrowserRouter, RouterProvider , Outlet } from "react-router-dom";
 import AboutPage from "./components/AboutPage";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
+import Footer from "./components/Footer";
 
 const AppLayout = () => {
   return (
     <div className="App">
       <Header />
       <Outlet/>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
