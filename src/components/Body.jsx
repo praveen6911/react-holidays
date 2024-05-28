@@ -18,7 +18,20 @@ const Body = () => {
     try {
       const response = await fetch(SWIGGY_API_URL);
       const data  = await response.json();
-      const restaurants = data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+      function checkJsonData(data) {
+        for (let i = 0; i < data?.data?.cards.length; i++) {
+          // initialize checkData for Swiggy Restaurant data
+          let checkData =
+            data?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants;
+
+          // if checkData is not undefined then return it
+          if (checkData !== undefined) {
+            return checkData;
+          }
+        }
+      }
+      const restaurants = checkJsonData(data);
       //storing all the restuarants in originalList
       setOriginalList(restaurants);
       //storing all the restuarants in filteredList

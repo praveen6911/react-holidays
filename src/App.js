@@ -21,15 +21,42 @@ import React from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import "./App.css";
+import { createBrowserRouter, RouterProvider , Outlet } from "react-router-dom";
+import AboutPage from "./components/AboutPage";
+import ContactUs from "./components/ContactUs";
+import Error from "./components/Error";
 
 const AppLayout = () => {
   return (
     <div className="App">
       <Header />
-      <Body />
+      <Outlet/>
       {/* <Footer /> */}
     </div>
   );
 };
 
-export default AppLayout;
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        
+        path: "/aboutus",
+        element: <AboutPage />,
+      },
+      { path: "/contactus", element: <ContactUs /> },
+    ],
+    errorElement: <Error/> ,
+  },
+
+]);
+
+export default function App() {
+  return <RouterProvider router={router} />;
+}
