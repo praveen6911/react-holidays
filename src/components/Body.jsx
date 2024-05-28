@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 import { SWIGGY_API_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import { Link } from 'react-router-dom';
 
 
 const Body = () => {
@@ -92,10 +93,17 @@ const Body = () => {
 
       <div className="restaurant-container">
         {/* mapping the filteredList ( condition is if it is not filtered then the filteredlist will be equal to original list ) with RestaurantCard component */}
-        {filteredList.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} restaurantData={restaurant} />
-        ))}
+        {filteredList.map((restaurant) => {
+          return(
+            <Link to={"/restaurant/" + restaurant?.info?.id}
+            key={restaurant?.info?.id}>
+               <RestaurantCard key={restaurant.info.id} restaurantData={restaurant} />
+            </Link>
+          )
+         
+})}
       </div>
+      
     </div>
   );
 };

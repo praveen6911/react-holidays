@@ -21,17 +21,18 @@ import React from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import "./App.css";
-import { createBrowserRouter, RouterProvider , Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import AboutPage from "./components/AboutPage";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 const AppLayout = () => {
   return (
     <div className="App">
       <Header />
-      <Outlet/>
+      <Outlet />
       <Footer />
     </div>
   );
@@ -47,13 +48,16 @@ const router = createBrowserRouter([
         element: <Body />,
       },
       {
-        
         path: "/aboutus",
         element: <AboutPage />,
       },
       { path: "/contactus", element: <ContactUs /> },
+      {
+        path: "/restaurant/:resId",
+        element: <RestaurantMenu />,
+      },
     ],
-    errorElement: <Error/> ,
+    errorElement: <Error />,
   },
 
 ]);
